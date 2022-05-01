@@ -1,0 +1,46 @@
+<div class="container">
+  <form class="form-group" (ngSubmit)="create()">
+    <button mat-stroked-button color="primary" type="submit">
+      Criar nova conta
+    </button>
+  </form>
+
+  <table mat-table [dataSource]="contaDataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let conta">{{ conta.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="saldo">
+      <th mat-header-cell *matHeaderCellDef>Saldo</th>
+      <td mat-cell *matCellDef="let conta">
+        {{ conta.saldo | currency: "BRL" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let conta">
+        <a class="edit" (click)="openDialog(conta)">
+          <i class="material-icons">edit</i>
+        </a>
+        <a class="delete" (click)="delete(conta)">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let conta; columns: displayedColumns"
+      (click)="get(conta)"
+    ></tr>
+
+    <tr class="mat-row" *matNoDataRow="">
+      <td class="mat-cell no-data" [colSpan]="displayedColumns.length">
+        No data available
+      </td>
+    </tr>
+  </table>
+</div>

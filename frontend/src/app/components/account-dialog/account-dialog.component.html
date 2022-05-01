@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Conta de ID {{ data.id }}</h1>
+<div mat-dialog-content>
+  <p>Alterar saldo</p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Operação</mat-label>
+    <mat-select>
+      <mat-option value="saque">Saque</mat-option>
+      <mat-option value="deposito">Deposito</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Valor</mat-label>
+    <input
+      type="number"
+      min="0"
+      step="0.01"
+      matInput
+      [(ngModel)]="data.saldo"
+    />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button
+    class="edit-button"
+    mat-stroked-button
+    color="primary"
+    [mat-dialog-close]="data"
+  >
+    Editar
+  </button>
+  <button
+    class="cancel-button"
+    mat-stroked-button
+    color="warn"
+    (click)="onNoClick()"
+  >
+    Cancelar
+  </button>
+</div>

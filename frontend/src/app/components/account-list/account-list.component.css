@@ -1,0 +1,65 @@
+.container {
+  padding-bottom: 100px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.form-group > button:hover {
+  color: #fff;
+  background-color: #1565c0;
+  transition: all 0.9s;
+}
+
+table {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.mat-header-cell {
+  background-color: #eee;
+  color: #000;
+  font-weight: bold;
+}
+
+.mat-column-id,
+.mat-column-saldo,
+.mat-column-acoes {
+  text-align: center;
+  font-size: 14px;
+}
+
+.mat-column-id {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  font-weight: bold;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i:hover,
+.delete > i:hover {
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #ddd;
+  transition: all 0.5s;
+}
+
+.edit > i {
+  color: #d9cd26;
+}
+
+.delete > i {
+  color: #e35e6b;
+}
+
+.no-data {
+  font-size: 16px;
+}

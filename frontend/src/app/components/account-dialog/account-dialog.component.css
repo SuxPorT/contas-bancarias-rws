@@ -1,0 +1,13 @@
+.edit-button:hover {
+  background-color: #1565c0;
+}
+
+.cancel-button:hover {
+  background-color: #ff5252;
+}
+
+.edit-button:hover,
+.cancel-button:hover {
+  color: #fff;
+  transition: all 0.9s;
+}

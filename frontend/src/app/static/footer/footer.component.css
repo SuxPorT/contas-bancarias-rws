@@ -1,0 +1,17 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer > p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  white-space: pre-wrap; /* Webkit */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* IE */
+  text-align: center;
+}
