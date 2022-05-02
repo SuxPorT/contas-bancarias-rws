@@ -58,12 +58,13 @@ class ContaResource(Resource):
 
         return Mensagens.INEXISTENTE(id)
 
-    def put(self, id: int):
+    def patch(self, id: int):
         response = Mensagens.INEXISTENTE(id)
 
         if conta_existe(id, CONTAS):
             args = PARSER.parse_args()
             conta = get_conta(id, CONTAS)
+            
             saque = args['saque']
             valor = args['valor']
 
@@ -81,7 +82,7 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Headers',
                          'Origin, Content-Type')
     response.headers.add('Access-Control-Allow-Methods',
-                         'GET, PUT, POST, DELETE')
+                         'GET, PUT, PATCH, POST, DELETE')
     return response
 
 

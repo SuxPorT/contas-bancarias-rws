@@ -10,7 +10,7 @@ import { Conta } from 'src/app/models/conta';
 export class AccountDialogComponent {
 
   constructor(public dialogRef: MatDialogRef<AccountDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Conta) {
+    @Inject(MAT_DIALOG_DATA) public data: any) {
   } 
 
   onNoClick(): void {

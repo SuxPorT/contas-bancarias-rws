@@ -21,12 +21,12 @@ class Banco:
     def saque(self, _id: int, valor: float) -> dict:
         url = f'{self._api}/{_id}'
         data = {'valor': valor, 'saque': True}
-        return requests.put(url, json=data).json()
+        return requests.patch(url, json=data).json()
 
     def deposito(self, _id: int, valor: float) -> dict:
         url = f'{self._api}/{_id}'
         data = {'valor': valor, 'saque': False}
-        return requests.put(url, json=data).json()
+        return requests.patch(url, json=data).json()
 
     def saldo(self, _id: int) -> dict:
         return requests.get(self._api + '/' + str(_id)).json()

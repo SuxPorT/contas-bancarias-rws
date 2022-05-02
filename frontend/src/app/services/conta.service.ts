@@ -25,8 +25,10 @@ export class ContaService {
     return this.http.post<Conta>(this.url, null);
   }
 
-  update(conta: Conta): Observable<any> {
-    return this.http.put<any>(`${this.url}/${conta.id}`, conta);
+  update(conta: any): Observable<any> {
+    const data = {valor: conta.valor, saque: conta.operacao === "true"};
+
+    return this.http.patch<any>(`${this.url}/${conta.id}`, JSON.stringify(data));
   }
 
   delete(id: number): Observable<any> {

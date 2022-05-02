@@ -26,7 +26,7 @@ export class AccountListComponent implements OnInit {
   openDialog(conta: Conta): void {
     const dialogRef = this.dialog.open(AccountDialogComponent, {
       width: '250px',
-      data: { id: conta.id, saldo: conta.saldo },
+      data: { id: conta.id, valor: 0.0, operacao: false },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -56,8 +56,8 @@ export class AccountListComponent implements OnInit {
     });
   }
 
-  update(conta: Conta): void {
-    this.contaService.update(conta);
+  update(data: any): void {
+    this.contaService.update(data).subscribe((_result) => {});
     this.getListaContas();
   }
 
